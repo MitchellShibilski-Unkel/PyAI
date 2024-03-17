@@ -26,6 +26,3 @@ def RNN(w, u, b, x):
 
     return yt
 
-def linear_regression(x):
-    b = np.array(x).reshape(-1, 1)
-    y = X
