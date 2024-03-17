@@ -9,10 +9,9 @@ def KNN(x, y, returnValues = 0):
         distances.append(absDistance)
         
     sortedDistances = []
-    for d in distances:
-        checkDistance = min(distances, key = lambda x:np.absolute(x-i)) 
-        sortedDistances.append(checkDistance)
-        distances.remove(checkDistance)
+    checkDistance = min(distances, key = lambda x:np.absolute(x-i)) 
+    sortedDistances.append(checkDistance)
+    distances.remove(checkDistance)
         
     if returnValues == 0:
         return sortedDistances[0]
