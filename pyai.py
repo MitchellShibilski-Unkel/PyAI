@@ -1,27 +1,57 @@
 import numpy as np
 
 
-def KNN(x, y, returnValues = 0):
-    distances = []
-    for axisX, axisY in zip(x, y):
-        distance = axisX - axisY
-        absDistance = np.absolute(distance)
-        distances.append(absDistance)
+class Basic:
+    def KNN(x, y, returnValues = 0):
+        distances = []
+        for axisX, axisY in zip(x, y):
+            distance = axisX - axisY
+            absDistance = np.absolute(distance)
+            distances.append(absDistance)
+            
+        sortedDistances = []
+        checkDistance = min(distances, key = lambda x:np.absolute(x-i)) 
+        sortedDistances.append(checkDistance)
+        distances.remove(checkDistance)
+            
+        if returnValues == 0:
+            return sortedDistances[0]
+        else:
+            return sortedDistances[0:returnValues-1]
         
-    sortedDistances = []
-    checkDistance = min(distances, key = lambda x:np.absolute(x-i)) 
-    sortedDistances.append(checkDistance)
-    distances.remove(checkDistance)
-        
-    if returnValues == 0:
-        return sortedDistances[0]
-    else:
-        return sortedDistances[0:returnValues-1]
-    
-def RNN(w, u, b, x):
-    yt = 0
-    ht = 1 / 1 (w * x + u * yt ** -1 + b) ** -1
-    yt = 1 / 1 (w * ht + b) ** -1
+    def RNN(w, u, b, x):
+        yt = 0
+        ht = 1 / 1 (w * x + u * yt ** -1 + b) ** -1
+        yt = 1 / 1 (w * ht + b) ** -1
 
-    return yt
+        return yt
 
+class NLP:
+    def __init__(self, text: str):
+        self.sentences = text.split(".")
+        self.words = text.split(" ")
+        self._past = ["was", "had", "did"]
+        self._present = ["is", "has"]
+        self._future = ["will", "shall"]
+
+    def getTense(self):
+        self.past = False
+        self.present = False
+        self.future = False
+
+        if self.sentences in self._past:
+            self.past = True
+        elif self.sentences in self._present:
+            self.present = True
+        elif self.sentences in self._future:
+            self.future = True
+        else:
+            return "ERROR - Tense :: Not Enough Data"
+
+        return self.past, self.present, self.future
+
+    def getWords(self):
+        return self.words
+
+    def getSentences(self):
+        return self.sentences
