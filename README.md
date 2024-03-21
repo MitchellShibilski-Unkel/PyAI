@@ -11,3 +11,4 @@ Clone: `gh repo clone MitchellShibilski-Unkel/PyAI`
 Able To Do:
 - Gets sentence tense
 - Gets each word and sentence
+- Able to change the type of tokenization (letters, words, or sentences)
