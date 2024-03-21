@@ -34,6 +34,22 @@ class NLP:
         self._present = ["is", "has"]
         self._future = ["will", "shall"]
 
+    def setTokensTo(self, letters: bool, *words: bool, **sentences: bool):
+        self.tokens = []
+
+        if letters:
+            tokens = iter(self.sentences)
+            for t in tokens:
+                self.tokens.append(t)
+        elif words:
+            for t in self.words:
+                self.tokens.append(t)
+        elif sentences:
+            for t in self.sentences:
+                self.tokens.append(t)
+        else:
+            self.tokens.append("ERROR")
+
     def getTense(self):
         self.past = False
         self.present = False
@@ -55,3 +71,6 @@ class NLP:
 
     def getSentences(self):
         return self.sentences
+    
+    def getTokens(self):
+        return self.tokens
