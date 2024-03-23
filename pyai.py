@@ -28,6 +28,7 @@ class Basic:
 
 class NLP:
     def __init__(self, text: str):
+        self.text = text
         self.sentences = text.split(".")
         self.words = text.split(" ")
         self._past = ["was", "had", "did"]
@@ -38,7 +39,7 @@ class NLP:
         self.tokens = []
 
         if letters:
-            tokens = iter(self.sentences)
+            tokens = iter(self.text)
             for t in tokens:
                 self.tokens.append(t)
         elif words:
