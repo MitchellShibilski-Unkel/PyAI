@@ -28,21 +28,26 @@ class Basic:
         return yt
         
 class Audio:
-    def __init__(self):
+    def __init__(self, audio: str):
         self.model = whisper.load_model("base")
+        self.audio = audio
         
-    def getTextFromAudio(self, audio):
-        audio = whisper.load_audio("audio.mp3")
-        audio = whisper.pad_or_trim(audio)
+    def generateTextFromAudio(self):
+        aud = whisper.load_audio(self.audio)
+        aud = whisper.pad_or_trim(aud)
 
-        mel = whisper.log_mel_spectrogram(audio).to(self.model.device)
+        self.mel = whisper.log_mel_spectrogram(aud).to(self.model.device)
 
-        _, probs = self.model.detect_language(mel)
+        self.model.detect_language(self.mel)
 
         options = whisper.DecodingOptions()
-        result = whisper.decode(self.model, mel, options)
+        result = whisper.decode(self.model, self.mel, options)
 
         return result.text
+    
+    def getLang(self):
+        i, lang = self.model.detect_language(self.mel)
+        return max(lang, key=lang.get)
 
 class NLP:
     def __init__(self, text: str):
