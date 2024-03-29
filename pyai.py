@@ -32,7 +32,7 @@ class Audio:
         self.model = whisper.load_model("base")
         self.audio = audio
         
-    def generateTextFromAudio(self):
+    def generateTextFromAudio(self) -> str:
         aud = whisper.load_audio(self.audio)
         aud = whisper.pad_or_trim(aud)
 
@@ -45,7 +45,7 @@ class Audio:
 
         return result.text
     
-    def translateText(self, text: str, dataSet: str):
+    def translateText(self, text: str, dataSet: str) -> str:
         with open(dataSet, "r") as d:
             data = d.read()
             
