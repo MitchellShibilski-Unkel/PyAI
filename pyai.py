@@ -45,6 +45,14 @@ class Audio:
 
         return result.text
     
+    def translateText(self, text: str, dataSet: str):
+        with open(dataSet, "r") as d:
+            data = d.read()
+            
+        translation = text.translate(data)
+        
+        return translation
+    
     def getLang(self):
         i, lang = self.model.detect_language(self.mel)
         return max(lang, key=lang.get)
