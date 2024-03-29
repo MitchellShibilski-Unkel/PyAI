@@ -14,4 +14,6 @@ Able To Do:
 - Able to change the type of tokenization `(letters, words, or sentences)`
 
 # Audio
-Able to convert audio to text
+Able To Do:
+- Able to convert audio to text
+- Get the language used in the audio
