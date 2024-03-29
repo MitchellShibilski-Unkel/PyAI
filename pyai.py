@@ -38,7 +38,6 @@ class Audio:
         mel = whisper.log_mel_spectrogram(audio).to(self.model.device)
 
         _, probs = self.model.detect_language(mel)
-        print(f"Detected language: {max(probs, key=probs.get)}")
 
         options = whisper.DecodingOptions()
         result = whisper.decode(self.model, mel, options)
