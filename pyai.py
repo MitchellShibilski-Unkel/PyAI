@@ -2,7 +2,7 @@ import numpy as np
 import whisper
 
 
-class Basic:
+class Algorithms:
     def KNN(x, y, returnValues = 0):
         distances = []
         for axisX, axisY in zip(x, y):
