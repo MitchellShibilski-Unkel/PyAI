@@ -17,3 +17,4 @@ Able To Do:
 Able To Do:
 - Able to convert audio to text
 - Get the language used in the audio
+- Translate one language to another
