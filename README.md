@@ -6,6 +6,7 @@ Clone: `gh repo clone MitchellShibilski-Unkel/PyAI`
 # Algorithms
 - RNN
 - KNN
+- ReLU
 
 # NLP
 Able To Do:
