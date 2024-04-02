@@ -26,6 +26,24 @@ class Algorithms:
         yt = 1 / 1 (w * ht + b) ** -1
 
         return yt
+
+    def ReLU(x: list, *y: list, **u: list):
+        X, Y = [], []
+        for x2 in x:
+            relu = max(0, x2)
+            if relu > 0:
+                X.append(1)
+            else:
+                X.append(0)
+
+        for y2 in y:
+            relu = max(0, y2)
+            if relu > 0:
+                Y.append(1)
+            else:
+                Y.append(0)
+
+        return X, Y
         
 class Audio:
     def __init__(self, audio: str):
