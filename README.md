@@ -7,6 +7,7 @@ Clone: `gh repo clone MitchellShibilski-Unkel/PyAI`
 - RNN
 - KNN
 - ReLU
+- Softmax
 
 # NLP
 Able To Do:
