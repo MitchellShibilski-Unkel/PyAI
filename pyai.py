@@ -50,7 +50,7 @@ class PyAI:
             else:
                 return newX
 
-        def Softmax(x):
+        def Softmax(self, x):
             if self.GPU:
                 tensor = Tensor(x, 1).to("cuda")
                 soft = nn.Softmax(dim=1).to("cuda")(x)
