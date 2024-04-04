@@ -49,6 +49,16 @@ class PyAI:
                 return newX, newY
             else:
                 return newX
+
+        def Softmax(x):
+            if self.GPU:
+                tensor = Tensor(x, 1).to("cuda")
+                soft = nn.Softmax(dim=1).to("cuda")(x)
+            else:
+                tensor = Tensor(x, 1).to("cpu")
+                soft = nn.Softmax(dim=1).to("cpu")(x)
+
+            return soft
             
     class Audio:
         def __init__(self, audio: str):
