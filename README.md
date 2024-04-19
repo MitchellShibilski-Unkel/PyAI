@@ -14,6 +14,7 @@ Able To Do:
 - Gets sentence tense
 - Gets each word and sentence
 - Able to change the type of tokenization `(letters, words, or sentences)`
+- Able to get the part of speech of a word
 
 # Audio
 Able To Do:
