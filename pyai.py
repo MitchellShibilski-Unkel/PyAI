@@ -1,5 +1,6 @@
 import numpy as np
 import whisper
+import spacy
 from torch import nn
 from torch import Tensor
 
@@ -139,3 +140,7 @@ class PyAI:
         
         def getTokens(self):
             return self.tokens
+
+        def getPartOfSpeech(self, text: str):
+            POS = spacy.load("en_core_web_sm")
+            return POS(text)[0].tag_
