@@ -1,7 +1,8 @@
 # PyAI
 This open-source library includes both an RNN and a KNN algorithm. In addition to these algorithms, PyAI offers a simple NLP and adds a way to convert audio into text through *Whisper*.
 
-Clone: `gh repo clone MitchellShibilski-Unkel/PyAI`
+Clone: `gh repo clone MitchellShibilski-Unkel/PyAI` <br />
+Installation: `pip install PyAI-lib`
 
 # Algorithms
 - RNN
