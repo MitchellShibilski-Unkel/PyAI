@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = 'v3.5'
+VERSION = 'v4.0'
 DESCRIPTION = 'PyAI'
 LONG_DESCRIPTION = '-'
 
@@ -21,7 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['torch', 'numpy', 'whisper', 'spacy'],
+    install_requires=['torch', 'numpy', 'whisper', 'spacy', 'sklearn'],
     keywords=['python', 'ai', 'machine_learning', 'nlp'],
     classifiers=[
         "Intended Audience :: Developers",

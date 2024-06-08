@@ -1,8 +1,9 @@
-import numpy as np
-import whisper
 import spacy
+import whisper
+import numpy as np
 from torch import nn
 from torch import Tensor
+from sklearn.tree import DecisionTreeRegressor
 
 
 class PyAI:
@@ -60,6 +61,12 @@ class PyAI:
                 soft = nn.Softmax(dim=1).to("cpu")(x)
 
             return soft
+
+        def decisionTree(self, trainX: list, trainY: list, words: list):
+            w = np.array([len(a) for a in words]).reshape(-1, 1)
+            tree = DecisionTreeRegressor()
+            tree.fit(trainX, trainY)                                                           
+            return tree.predict(w).tolist()
             
     class Audio:
         def __init__(self, audio: str):

@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: PyAI
+Version: 3.5
+Summary: PyAI
+Author: Mitchell Shibilski-Unkel
+Author-email: None
+Keywords: python,ai,machine_learning,nlp
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: whisper
+Requires-Dist: spacy
+
+
+# PyAI
+This open-source library includes both an RNN and a KNN algorithm. In addition to these algorithms, PyAI offers a simple NLP and adds a way to convert audio into text through *Whisper*.
+
+Clone: `gh repo clone MitchellShibilski-Unkel/PyAI` <br />
+Installation: `pip install git+https://github.com/MitchellShibilski-Unkel/PyAI.git@main`
+
+# Algorithms
+- RNN
+- KNN
+- ReLU
+- Softmax
+
+# NLP
+Able To Do:
+- Gets sentence tense
+- Gets each word and sentence
+- Able to change the type of tokenization `(letters, words, or sentences)`
+- Able to get the part of speech of a word
+
+# Audio
+Able To Do:
+- Able to convert audio to text
+- Get the language used in the audio
+- Translate one language to another
