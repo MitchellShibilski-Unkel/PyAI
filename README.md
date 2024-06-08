@@ -9,6 +9,7 @@ Installation: `pip install git+https://github.com/MitchellShibilski-Unkel/PyAI.g
 - KNN
 - ReLU
 - Softmax
+- Decision Tree
 
 # NLP
 Able To Do:
